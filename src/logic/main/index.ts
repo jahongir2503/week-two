@@ -22,7 +22,8 @@ const main = () => {
             state === EButtonUsage.OPERATOR_ADD ||
             state === EButtonUsage.OPERATOR_SUBTRACT ||
             state === EButtonUsage.OPERATOR_MULTIPLY ||
-            state === EButtonUsage.OPERATOR_DIVIDE
+            state === EButtonUsage.OPERATOR_DIVIDE ||
+            state === EButtonUsage.OPERATOR_DECIMAL
         ){
             if (currentValue === "0") {
                 currentValue = state;
@@ -35,12 +36,14 @@ const main = () => {
         if(state === EButtonUsage.OPERATOR_AC){
             currentValue = currentValue.substring(0, currentValue.length - 1);
         }
+
 //Логика удаления значений C
         if(state === EButtonUsage.OPERATOR_C){
             currentValue = currentValue = '';
         }
         if(currentValue.length === 0){currentValue = '0'}
-//
+
+// ну кнопка равно.
         if(state === EButtonUsage.OPERATOR_EQUAL){currentValue = eval(currentValue)}
 
 
